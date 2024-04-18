@@ -10,7 +10,7 @@
 
                 <div class="card-header">Detalhes do socio {{$socio->nome}}</div>
                 <a href="{{route('socio.edit', $socio->id)}}" class="btn btn-outline-warning">Editar</a>
-                <a href="{{route('socio.delete', $socio->id)}}" class="btn btn-outline-danger">Excluir</a>
+                <a href="{{route('socio.confirma_delete', $socio->id)}}" class="btn btn-outline-danger">Excluir</a>
                 <table class="table table-borderless table-dark">
                     <thead>
                         <tr>

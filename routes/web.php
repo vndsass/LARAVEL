@@ -49,7 +49,7 @@ Route::middleware('auth')->group(function () {
     ]);
     
     //rota para a paginacao de confirmacao de elimincao de socio
-    Route:: get('/confirma_delete_editora/{id}', [SocioController::class,'confirma_delete'])->name('editora.confirma_delete');
+    Route:: get('/confirma_delete_editora/{id}', [EditoraController::class,'confirma_delete_editora'])->name('editora.confirma_delete_editora');
    
 });
 

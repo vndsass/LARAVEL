@@ -10,7 +10,7 @@
 
                 <div class="card-header">Detalhes da Editora {{$editora->nome}}</div>
                 <a href="{{route('editora.edit', $editora->id)}}" class="btn btn-outline-warning">Editar</a>
-                <a href="{{route('editora.confirma_delete', $editora->id)}}" class="btn btn-outline-danger">Excluir</a>
+                <a href="{{route('editora.confirma_delete_editora', $editora->id)}}" class="btn btn-outline-danger">Excluir</a>
                 <table class="table table-borderless table-dark">
                     <thead>
                         <tr>

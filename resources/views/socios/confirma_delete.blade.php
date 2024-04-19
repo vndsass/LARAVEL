@@ -13,7 +13,8 @@
                     <form action="{{route('socio.destroy', $id->id)}}" method="post">
                     @csrf
                     @method('DELETE')    
-                    <button class="btn btn-secondary-danger" type="delete" value="limpar">Eliminar definitivamente</button>                               
+                    <button class="btn btn-secondary-danger" type="delete" value="limpar">Eliminar definitivamente</button>   
+                    <a href="{{route('socio.show',$id->id)}}">Voltar</a>                            
                 </form>
                 </div>
             </div>

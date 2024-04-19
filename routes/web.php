@@ -37,14 +37,19 @@ Route::middleware('auth')->group(function () {
     //rota para os socios de um utilizador
     Route:: get('/socios_user/{id}', [SocioController:: class, 'socio_user'])->name('socio.user');
     //Route:: get ('/socios_delete/{id}', [SocioController::class,'delete'])->name('socio.delete');!-->
+   
     
+    //rota para a paginacao de confirmacao de elimincao de socio
+    Route:: get('/confirma_delete/{id}', [SocioController::class,'confirma_delete'])->name('socio.confirma_delete');
+
+     
     //rota para as editoras
     Route::resources([
         'editora'=>EditoraController::class
     ]);
     
     //rota para a paginacao de confirmacao de elimincao de socio
-    Route:: get('/confirma_delete/{id}', [SocioController::class,'confirma_delete'])->name('socio.confirma_delete');
+    Route:: get('/confirma_delete_editora/{id}', [SocioController::class,'confirma_delete'])->name('editora.confirma_delete');
    
 });
 

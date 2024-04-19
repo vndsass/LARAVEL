@@ -89,22 +89,22 @@ class SocioController extends Controller
     public function update(Request $request, Socio $socio)
     {  
         Socio::findOrFail($socio->id)->update($request->all());
-        return redirect()->route('socio.show', $socio->id);
+        return redirect()->route('socio.show', $socio->id)->with('msg',' O registo foi atualizado com sucesso.');    ;
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Socio $id)
+    public function destroy(Socio $socio)
     {
-        Socio::delete ($id);
-        return redirect()->route('socio.index', Auth::user()->id);
+        Socio::findOrfail($socio->id)->delete();
+        return redirect()->route('socio.index');
 
     }
 
     public function confirma_delete(Socio $id)
     {
-        return view('socios.confirma_delete',['id'=>$id]);
+        return view('socios.confirma_delete',['id'=>$id])->with('msg',' O registo foi eliminado com sucesso.');
     }
     
 }

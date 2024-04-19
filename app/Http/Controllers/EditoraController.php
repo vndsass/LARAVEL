@@ -13,6 +13,7 @@ class EditoraController extends Controller
     public function index()
     {
         //
+        return view('editoras.index',['editoras'=>Editora::orderBy('nome')->paginate(20)]);
     }
 
     /**
@@ -21,6 +22,7 @@ class EditoraController extends Controller
     public function create()
     {
         //
+        return view('editoras.create');
     }
 
     /**
@@ -29,6 +31,14 @@ class EditoraController extends Controller
     public function store(Request $request)
     {
         //
+        $editora=new Editora();
+        $editora->nome          =$request->nome;
+        $editora->morada        =$request->morada;
+        $editora->telefone      =$request->telefone;
+        $editora->contribuinte  =$request->contribuinte;
+
+        $editora->save();
+        return redirect()->route('editora.create')->with('msg',' O registo foi gravado com sucesso.');   
     }
 
     /**
@@ -37,6 +47,7 @@ class EditoraController extends Controller
     public function show(Editora $editora)
     {
         //
+        return view('editoras.show', ['editora'=>$editora]);
     }
 
     /**
@@ -45,6 +56,7 @@ class EditoraController extends Controller
     public function edit(Editora $editora)
     {
         //
+        return view('editoras.edit', ['editora'=>$editora]);
     }
 
     /**
@@ -53,6 +65,8 @@ class EditoraController extends Controller
     public function update(Request $request, Editora $editora)
     {
         //
+        Editora::findOrFail($editora->id)->update($request->all());
+        return redirect()->route('editora.show', $editora->id)->with('msg',' O registo foi atualizado com sucesso.');    ;
     }
 
     /**
@@ -61,5 +75,11 @@ class EditoraController extends Controller
     public function destroy(Editora $editora)
     {
         //
+        Editora::findOrfail($editora->id)->delete();
+        return redirect()->route('editora.index');
+    }
+
+    public function confirma_delete_editora(Editora $id){
+        return view('editoras.confirma_delete', ['id'=>$id])->with('msg',' O registo foi eliminado com sucesso.'); 
     }
 }

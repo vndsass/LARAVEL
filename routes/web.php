@@ -6,11 +6,23 @@ use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\SocioController;
 use App\Http\Controllers\EditoraController;
+use App\Http\Controllers\NavigationController;
+
+// Route::get('/', function () {
+//     //return view('auth.login');
+//     return view ('site.home');
+// });
+
+Route::get('/', [NavigationController::class,'home'])->name('site.home');
+
+Route::get('/servico',[NavigationController::class,'servico'])->name('site.servico');
+
+Route::get('/contacto',[NavigationController::class,'contacto'])->name('site.contacto');
+
+Route::get('/galeria',[NavigationController::class,'galeria'])->name('site.galeria');
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

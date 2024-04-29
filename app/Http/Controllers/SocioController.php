@@ -12,10 +12,10 @@ use Illuminate\Support\Facades\Auth;
 class SocioController extends Controller
 {
     public function socio_user(User $id)
-    {   
-        $user=User::where('id',$id->id)->first();
+    {   $user=User::where('id',$id->id)->first();
         $socios=$user->socios()->get();
         return view('socios.socio_user',['socios'=>$socios]);
+            
 
     } 
     

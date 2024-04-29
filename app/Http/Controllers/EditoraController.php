@@ -80,6 +80,6 @@ class EditoraController extends Controller
     }
 
     public function confirma_delete_editora(Editora $id){
-        return view('editoras.confirma_delete_editora', ['id'=>$id])->with('msg',' O registo foi eliminado com sucesso.'); 
+        return view('editoras.confirma_delete', ['id'=>$id])->with('msg',' O registo foi eliminado com sucesso.'); 
     }
 }

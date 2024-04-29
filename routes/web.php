@@ -6,11 +6,23 @@ use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\SocioController;
 use App\Http\Controllers\EditoraController;
+use App\Http\Controllers\NavigationController;
+
+// Route::get('/', function () {
+//     //return view('auth.login');
+//     return view ('site.home');
+// });
+
+Route::get('/', [NavigationController::class,'home'])->name('site.home');
+
+Route::get('/servico',[NavigationController::class,'servico'])->name('site.servico');
+
+Route::get('/contacto',[NavigationController::class,'contacto'])->name('site.contacto');
+
+Route::get('/galeria',[NavigationController::class,'galeria'])->name('site.galeria');
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -36,6 +48,7 @@ Route::middleware('auth')->group(function () {
 
     //rota para os socios de um utilizador
     Route:: get('/socios_user/{id}', [SocioController:: class, 'socio_user'])->name('socio.user');
+    
     //Route:: get ('/socios_delete/{id}', [SocioController::class,'delete'])->name('socio.delete');!-->
    
     
@@ -49,7 +62,7 @@ Route::middleware('auth')->group(function () {
     ]);
     
     //rota para a paginacao de confirmacao de elimincao de socio
-    Route:: get('/confirma_delete_editora/{id}', [SocioController::class,'confirma_delete'])->name('editora.confirma_delete');
+    Route:: get('/confirma_delete_editora/{id}', [EditoraController::class,'confirma_delete_editora'])->name('editora.confirma_delete_editora');
    
 });
 

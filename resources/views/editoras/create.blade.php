@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('site.layout')
 
 @section('content')
 <div class="container">
@@ -56,4 +56,3 @@
     </div>
 </div>
 @endsection
-php

@@ -117,6 +117,9 @@
           }
         }
         </style>
+         <!-- Link para css e js desenvolvidos -->
+         @vite(['resources/sass/app.scss', 'resources/js/app.js', 'resources/css/app.css'])
+
 </head>
 <body>
 
@@ -142,6 +145,11 @@
           }
         }
         </script>
+
+
+        
+
+
 
 </body>
 </html>

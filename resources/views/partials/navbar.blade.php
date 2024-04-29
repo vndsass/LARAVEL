@@ -1,24 +1,20 @@
-    
+   
+   <nav>
 
-
-<div class="topnav" id="myTopnav">
-    <a href="{{route('site.home')}}" class="active">Homepage</a>
-    <a href="{{route('site.servico')}}">Serviços</a>
-    <a href="{{route('site.contacto')}}">Contactos</a>
-    <a href="{{route('site.galeria')}}">Galeria</a>
-    <a href="{{route('home')}}">Inicio</a>
-    
-    <div class="dropdown">
-      <button class="dropbtn">Utilizadores
-        <i class="fa fa-caret-down"></i>
-      </button>
-      <div class="dropdown-content">
-        <a href="{{route('home')}}">Login</a>
-        <a href="{{route('user.index')}}">Utilizadores</a>
-        <a href="{{route('socio.create')}}">Sócios</a>
-        <a href="{{route('editora.create')}}">Editoras</a>
-      </div>
-    </div>
-    <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
-  </div>
-
+        <div class="topnav" id="myTopnav">
+            <ul>
+                <li><a href="{{ route('home') }}" class="active">Menu</a></li>
+                <li><a href="{{ route('site.servico') }}">Serviços</a></li>
+                <li><a href="{{ route('site.contacto') }}">Contactos</a></li>
+                <li><a href="{{ route('site.galeria') }}">Galeria</a></li>
+                <li><a href="{{ route('socio.index') }}">Todos os socios </a></li>
+                <li><a href="{{route('socio.user', Auth::user()->id)}}">Meus socios </a></li>
+                <li><a href="{{route('socio.create')}}">Criar novo socio </a></li>
+                <li><a href="{{ route('editora.index') }}">Listar editoras</a></li>
+                <li><a href="{{ route('editora.create') }}">criar nova editoras</a></li>
+                <li><a href="{{ route('user.index') }}">Lista utilizadores</a></li>
+                <li style="float:right"><a href="{{ route('login') }}" class="active">Login</a></li>
+                <li style="float:right"><a href="{{ route('register') }}" class="active">Register</a></li>
+            </ul>
+        </div>
+    </nav>

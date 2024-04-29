@@ -48,6 +48,7 @@ Route::middleware('auth')->group(function () {
 
     //rota para os socios de um utilizador
     Route:: get('/socios_user/{id}', [SocioController:: class, 'socio_user'])->name('socio.user');
+    
     //Route:: get ('/socios_delete/{id}', [SocioController::class,'delete'])->name('socio.delete');!-->
    
     

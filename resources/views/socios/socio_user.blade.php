@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('site.layout')
 
 @section('content')
 <div class="container">
@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Listagem dos meus socios') }}
-                    <div>Sociosregistados:{{count($socios)}}</div>
+                    <div>Socios Registados:{{count($socios)}}</div>
                     <table class="table table-borderless table-dark">
                         <thead>
                             <tr>

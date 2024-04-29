@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('site.layout')
 
 @section('content')
 <div class="container">
@@ -11,14 +11,14 @@
                     {{session('msg')}}
                     </p >
                     @endif
-                   
-                    <p class="btn btn-dark"><a href="{{route('socio.index')}}">   
+                    <div>
+                    <a class="btn btn-outline-primary" href="{{route('socio.index')}}">   
                         Listar todos os socios</a>
-                    </p>
                     
-                    <p class="btn btn-dark"><a href="{{route('socio.user', Auth::user()->id)}}">
+                    
+                   <a  class="btn btn-outline-secondary" href="{{route('socio.user', Auth::user()->id)}}">
                         Listar os meus socios</a>
-                    </p>
+                        </div>
                 <div class="card-body">
 
                     <form action="{{route('socio.store')}}" method="post">
@@ -73,4 +73,3 @@
     </div>
 </div>
 @endsection
-php
